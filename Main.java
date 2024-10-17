@@ -4,6 +4,6 @@ public class Main
         Team team=new Team(1000000);
         team.readTeamNames();
         team.displayTeamNames();
-        eee
+        1234
     }
 }
