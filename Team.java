@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.io.*;
 
 public class Team {
+    private ArrayList<Player> players; // List of players on the team
     private ArrayList<String> teamNames; // List to store team names from the CSV
     private double budget;
 
@@ -11,7 +12,7 @@ public class Team {
     }
 
     public void readTeamNames() {
-        String fileName = "src//nba_fake_teams.csv"; // File name
+        String fileName = "nba_fake_teams.csv"; // File name
         BufferedReader reader = null;
         String line = "";
 
@@ -53,6 +54,23 @@ public class Team {
         }
     }
 
+    public void addPlayertoTeams(Player player){
+        if(players.size()< 15 ){
+            players.add(player);
+        }
+        else {
+            System.out.println("Team already has 15 players. Cannot add more.");
+        }
+        }
 
+    public void displayTeamPlayers() {
+        System.out.println("Players in  :");
+        for (Player player : players) {
+            System.out.println("Position: " + player.getPosition() + ", Height: " + player.getHeight() + ", Weight: " + player.getWeight() + ", Reach: " + player.getReach());
+        }
+
+
+    }
 
 }
+
